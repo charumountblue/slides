@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Block from './block';
+import TextBlock from './textblock';
+import ImageBlock from './imageblock';
 
 export class preview extends Component {
   render() {
@@ -14,13 +15,26 @@ export class preview extends Component {
     }
     selectedSlideStyle['backgroundColor'] = this.props.slide.backgroundColor;
     let blocks = [...this.props.slide.blocks];
-    let blockElements = blocks.map((block) => (
-      <Block
-        newWidth={this.props.newWidth}
-        newHeight={this.props.newHeight}
-        {...block}
-      ></Block>
-    ));
+    let blockElements = blocks.map((block) => {
+      if (block.type === 'text') {
+        return (
+          <TextBlock
+            newWidth={this.props.newWidth}
+            newHeight={this.props.newHeight}
+            {...block}
+          ></TextBlock>
+        );
+      } else if (block.type === 'image') {
+        return (
+          <ImageBlock
+            newWidth={this.props.newWidth}
+            newHeight={this.props.newHeight}
+            {...block}
+          ></ImageBlock>
+        );
+      }
+    });
+    // console.clear();
     console.log(this.props.slide);
     return (
       <div

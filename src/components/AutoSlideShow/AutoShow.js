@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import "../Preview/SlideShow.css";
-import ReactTimeout from 'react-timeout'
+import React, { Component } from 'react';
+import '../Preview/SlideShow.css';
+import ReactTimeout from 'react-timeout';
 
 class autoShow extends Component {
   constructor(props) {
@@ -11,6 +11,7 @@ class autoShow extends Component {
       blocks: [this.props.slides[0].blocks[0]]
     };
   }
+  // isFullscreen = true;
 
   nextSlide = () => {
     if (this.state.currentSlide !== this.props.slides.length) {
@@ -21,6 +22,7 @@ class autoShow extends Component {
         this.setState({
           currentBlock: this.state.currentBlock + 1
         });
+        // destucture
         this.state.blocks.push(
           this.props.slides[this.state.currentSlide].blocks[
             this.state.currentBlock
@@ -43,21 +45,29 @@ class autoShow extends Component {
   };
 
   handleClick = (e) => {
-    this.props.setTimeout(this.nextSlide, 1000) // call the `toggle` function after 5000ms
-    document.getElementById("show").webkitRequestFullscreen();
-  }
+    this.props.setTimeout(this.nextSlide, 1000); // call the `toggle` function after 5000ms
+    // this.isFullscreen = true;
+    document.getElementById('show').webkitRequestFullscreen();
+  };
 
   render() {
     // console.log(this.props,this.state);
     return (
-      <div className="slide-show" id="show" style={{backgroundColor:this.props.slides[this.state.currentSlide].backgroundColor}}>
-        {this.state.blocks.map(block =>
-          block.type === "text"
+      <div
+        className="slide-show"
+        id="show"
+        style={{
+          backgroundColor: this.props.slides[this.state.currentSlide]
+            .backgroundColor
+        }}
+      >
+        {this.state.blocks.map((block) =>
+          block.type === 'text'
             ? React.createElement(
                 block.format,
                 {
                   style: {
-                    position: "absolute",
+                    position: 'absolute',
                     top: block.top + 20,
                     left: block.left + 250,
                     color: block.color,
@@ -67,20 +77,17 @@ class autoShow extends Component {
                 },
                 block.value
               )
-            : React.createElement(
-                'img',
-                {
-                  style: {
-                    position: "absolute",
-                    top: block.top + 20,
-                    left: block.left + 250,
-                    height: block.height,
-                    width: block.width,
-                  },
-                  src: block.url,
-                  className: block.transition
+            : React.createElement('img', {
+                style: {
+                  position: 'absolute',
+                  top: block.top + 20,
+                  left: block.left + 250,
+                  height: block.height,
+                  width: block.width
                 },
-              )
+                src: block.url,
+                className: block.transition
+              })
         )}
         <button onClick={this.handleClick}>Start Show!</button>
       </div>

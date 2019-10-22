@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './deck.css';
 import MiniSlide from '../miniSlide/miniSlide';
+import { Link } from 'react-router-dom';
 
 export class deck extends Component {
   state = { displayModal: false };
@@ -14,8 +15,8 @@ export class deck extends Component {
           <div className="preview-dashboard">
             <MiniSlide
               slide={this.props.previewSlide}
-              newHeight="270"
-              newWidth="380"
+              newHeight="250"
+              newWidth="350"
               onSlideSelection={this.onSlideSelection}
             ></MiniSlide>
           </div>
@@ -26,25 +27,28 @@ export class deck extends Component {
           <div className="buttons-dashboard">
             <button
               type="button"
-              class="btn btn-outline-dark"
+              className="btn btn-outline-dark"
               onClick={this.delete}
             >
               Delete
             </button>
             <button
               type="button"
-              class="btn btn-outline-dark"
+              className="btn btn-outline-dark"
               onClick={this.props.editDeck.bind(this, this.props.id)}
             >
               Edit
             </button>
-            <button
-              type="button"
-              class="btn btn-outline-dark"
-              onClick={this.props.viewDeck.bind(this, this.props.id)}
+            <Link
+              to={{
+                pathname: `/preview/${this.props.id}`,
+                state: { deck: this.props.deck }
+              }}
             >
-              View
-            </button>
+              <button type="button" className="btn btn-outline-dark">
+                View
+              </button>
+            </Link>
           </div>
         </div>
         {this.state.displayModal ? (
@@ -52,14 +56,14 @@ export class deck extends Component {
             Are you sure?
             <button
               type="button"
-              class="btn btn-outline-warning"
+              className="btn btn-outline-warning"
               onClick={this.props.deleteDeck.bind(this, this.props.id)}
             >
               Yes
             </button>
             <button
               type="button"
-              class="btn btn-outline-danger"
+              className="btn btn-outline-danger"
               onClick={this.hideModal}
             >
               No

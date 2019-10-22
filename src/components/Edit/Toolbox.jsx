@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Dropdown from "./Dropdown";
-import ToolboxOptions from "./ToolboxOptions";
+import React, { Component } from 'react';
+import Dropdown from './Dropdown';
+import ToolboxOptions from './ToolboxOptions';
 
 class Toolbox extends Component {
   state = {};
@@ -16,7 +16,7 @@ class Toolbox extends Component {
         </div>
         <div
           className="my-1"
-          style={{ backgroundColor: "white", height: "60%" }}
+          style={{ backgroundColor: 'white', height: '60%' }}
         >
           <ToolboxOptions
             onApplyStyle={this.props.onApplyStyle}
@@ -37,7 +37,7 @@ class Toolbox extends Component {
             Save Slide
           </button>
           <button
-            onClick={e => this.props.onSaveDeck(e)}
+            onClick={(e) => this.props.onSaveDeck(e)}
             className="btn btn-outline-success"
             disabled={this.props.isUploadingFiles}
           >
@@ -46,11 +46,11 @@ class Toolbox extends Component {
         </div>
 
         <button
-          onClick={e => this.props.onDashBoardNavigation(e)}
+          onClick={(e) => this.props.onDashBoardNavigation(e)}
           className="btn btn-outline-light"
           disabled={this.props.isUploadingFiles}
         >
-          {"<< Dash Board"}
+          {'<< Dash Board'}
         </button>
       </div>
     );

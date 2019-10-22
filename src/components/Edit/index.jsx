@@ -31,7 +31,7 @@ class Edit extends Component {
       currentWorkingSlide: {},
       file: 'https://picsum.photos/200/300',
       filesToUpload: [],
-      isUploadingFiles: false,
+      isUploadingFiles: false
     };
   }
 
@@ -117,7 +117,7 @@ class Edit extends Component {
         width: 200,
         height: 200,
         // url: 'https://picsum.photos/200/300',
-        url: this.state.file,
+        url: this.state.file
       };
       this.setState({ workspace: [...this.state.workspace, defaultImage] });
     }
@@ -137,7 +137,8 @@ class Edit extends Component {
     this.setState({
       workspace: blocks,
       currentSlideId: slideId,
-      currentWorkingSlide: slide[0]
+      currentWorkingSlide: slide[0],
+      block: null
     });
   };
 
@@ -151,7 +152,7 @@ class Edit extends Component {
       top: 200,
       left: 100,
       color: 'black',
-      backgroundColor: 'transparent',
+      backgroundColor: 'transparent'
     };
     const blocks = [...this.state.workspace, newTextElement];
     this.setState({ workspace: blocks });
@@ -164,13 +165,13 @@ class Edit extends Component {
       .filter(
         (block) =>
           block.type === 'image' &&
-          !block.url.includes('https://firebasestorage.googleapis.com'),
+          !block.url.includes('https://firebasestorage.googleapis.com')
       )
       .forEach(async (block) => {
         // Need to upload the Images if the block is image.
         console.log(this.state.filesToUpload, block);
         const imageToUpload = this.state.filesToUpload.filter(
-          (imageBlock) => imageBlock.localURL === block.url,
+          (imageBlock) => imageBlock.localURL === block.url
         );
         console.log('uploading image....', block, imageToUpload);
         if (imageToUpload.length === 1) {
@@ -187,7 +188,7 @@ class Edit extends Component {
     const slides = [...this.state.slides];
 
     const slideIndex = slides.findIndex(
-      (slide) => slide.idSlide === this.state.currentSlideId,
+      (slide) => slide.idSlide === this.state.currentSlideId
     );
 
     // Upload the images onClick Save slide.
@@ -275,9 +276,9 @@ class Edit extends Component {
           left: 120,
           textAlign: 'center',
           color: 'black',
-          backgroundColor: 'transparent',
-        },
-      ],
+          backgroundColor: 'transparent'
+        }
+      ]
     };
     this.setState({
       slides: [...this.state.slides, defaultSlide],
@@ -404,7 +405,7 @@ class Edit extends Component {
     fileDetail.localURL = fileURL;
     this.setState({
       file: fileURL,
-      filesToUpload: [...this.state.filesToUpload, fileDetail],
+      filesToUpload: [...this.state.filesToUpload, fileDetail]
     });
   };
 
@@ -430,7 +431,7 @@ class Edit extends Component {
     }
 
     const blockIndex = workspace.findIndex(
-      (block) => block.id === blockToUpdate.id,
+      (block) => block.id === blockToUpdate.id
     );
 
     console.log('index', blockToUpdate, this.state.block);
@@ -513,6 +514,6 @@ export default connect(
     updateSlidesToDeck,
     fetchUserDeck,
     setDeckId,
-    fetchUser,
-  },
+    fetchUser
+  }
 )(Edit);

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class TextElement extends Component {
   state = {
@@ -6,16 +6,18 @@ class TextElement extends Component {
   };
   getHTML = (jsonElement) => {
     let htmlElement = null;
-
     if (jsonElement.type === 'text') {
       const { textAlign } = jsonElement;
-      const size = jsonElement.value.length;
+      let size = jsonElement.value.length;
+      if (size <= 5) {
+        size = 10;
+      }
       const color = 'color' in jsonElement ? jsonElement.color : 'black';
+      const transition = jsonElement.transition || '';
       const backgroundColor =
         'backgroundColor' in jsonElement
           ? jsonElement.backgroundColor
           : 'trasparent';
-      const transition = jsonElement.transition || "";
       // console.log('Size Of Input', size);
 
       const styles = {
@@ -28,7 +30,7 @@ class TextElement extends Component {
           border: 0,
           textAlign,
           color,
-          backgroundColor,
+          backgroundColor
         },
         h2: {
           display: 'block',
@@ -39,7 +41,7 @@ class TextElement extends Component {
           border: 0,
           textAlign,
           color,
-          backgroundColor,
+          backgroundColor
         },
         p: {
           display: 'block',
@@ -49,11 +51,11 @@ class TextElement extends Component {
           border: 0,
           textAlign,
           color,
-          backgroundColor,
-        },
+          backgroundColor
+        }
       };
       switch (jsonElement.format) {
-        case "h1":
+        case 'h1':
           htmlElement = (
             <input
               id="dragInput"
@@ -62,13 +64,14 @@ class TextElement extends Component {
               size={size - 5}
               maxLength={45}
               defaultValue={jsonElement.value}
-              onChange={e => this.props.onInputChange(e)}
-              onBlur={e => this.props.onContainerClick(e)}
+              onChange={(e) => this.props.onInputChange(e)}
+              onBlur={(e) => this.props.onContainerClick(e)}
               className={transition}
+              autoComplete="off"
             ></input>
           );
           break;
-        case "h2":
+        case 'h2':
           htmlElement = (
             <input
               id="dragInput"
@@ -77,13 +80,14 @@ class TextElement extends Component {
               size={size - 5}
               maxLength={45}
               defaultValue={jsonElement.value}
-              onChange={e => this.props.onInputChange(e)}
-              onBlur={e => this.props.onContainerClick(e)}
+              onChange={(e) => this.props.onInputChange(e)}
+              onBlur={(e) => this.props.onContainerClick(e)}
               className={transition}
+              autoComplete="off"
             ></input>
           );
           break;
-        case "h3":
+        case 'h3':
           htmlElement = <h3>{jsonElement.value}</h3>;
           break;
         default:

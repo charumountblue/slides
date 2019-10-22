@@ -4,7 +4,7 @@ class Slide extends Component {
   state = {};
   render() {
     return (
-      <MiniSlide {...this.props} newHeight="100" newWidth="140"></MiniSlide>
+      <MiniSlide {...this.props} newHeight="100" newWidth="160"></MiniSlide>
     );
   }
 }

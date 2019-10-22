@@ -14,6 +14,9 @@ let styles = {
   position: 'relative',
   backgroundColor: 'white'
 };
+
+console.log(Object.isFrozen(styles), 'styles');
+
 const Container = ({
   hideSourceOnDrag,
   workspace,
@@ -36,6 +39,8 @@ const Container = ({
       position: 'relative',
       backgroundColor: slide.backgroundColor
     };
+    // console.log(Object.isFrozen(styles), 'inside');
+    // styles['backgroundColor'] = slide.backgroundColor;
   }
   const [boxes, setBoxes] = useState([]);
   const [, drop] = useDrop({

@@ -47,7 +47,7 @@
 
 /* Single Slide */
 
-.slide-scroll > .slide {
+.slide-scroll>.slide {
   box-sizing: border-box;
   position: relative;
   background-color: white;
@@ -57,14 +57,14 @@
   width: 160px;
 }
 
-.slide-scroll > .slide > p {
+.slide-scroll>.slide>p {
   width: fit-content;
   font-size: 8px;
   margin: 0;
   padding: 0;
 }
 
-.slide-scroll > .slide:hover {
+.slide-scroll>.slide:hover {
   border: 3px dashed orange;
 }
 
@@ -107,7 +107,7 @@
   left: 33%;
 }
 
-.editor-loader > .loader {
+.editor-loader>.loader {
   background-color: white;
 }
 

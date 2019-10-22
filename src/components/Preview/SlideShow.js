@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "./SlideShow.css";
+import React, { Component } from 'react';
+import './SlideShow.css';
 
 class slideShow extends Component {
   constructor(props) {
@@ -65,19 +65,25 @@ class slideShow extends Component {
 
   render() {
     return (
-      <div className="slide-show" style={{backgroundColor:this.props.slides[this.state.currentSlide].backgroundColor}}>
-        {console.log("render state", this.state)}
+      <div
+        className="slide-show"
+        style={{
+          backgroundColor: this.props.slides[this.state.currentSlide]
+            .backgroundColor
+        }}
+      >
+        {console.log('render state', this.state)}
         {console.log(this.props.slides)}
         {console.log(this.state.blocks)}
-        {this.state.blocks.map(block =>
-          block.type === "text"
+        {this.state.blocks.map((block) =>
+          block.type === 'text'
             ? React.createElement(
                 block.format,
                 {
                   style: {
-                    position: "absolute",
-                    top: block.top,
-                    left: block.left,
+                    position: 'absolute',
+                    top: (block.top / 500) * 500,
+                    left: (block.left / 700) * 700,
                     color: block.color,
                     backgroundColor: block.backgroundColor
                   },
@@ -85,20 +91,17 @@ class slideShow extends Component {
                 },
                 block.value
               )
-            : React.createElement(
-                'img',
-                {
-                  style: {
-                    position: "absolute",
-                    top: block.top,
-                    left: block.left,
-                    height: block.height,
-                    width: block.width,
-                  },
-                  src: block.url,
-                  className: block.transition
+            : React.createElement('img', {
+                style: {
+                  position: 'absolute',
+                  top: (block.top / 500) * 500,
+                  left: (block.left / 700) * 700,
+                  height: (block.height / 500) * 500,
+                  width: (block.width / 700) * 700
                 },
-              )
+                src: block.url,
+                className: block.transition
+              })
         )}
         <div className="nav-buttons">
           <img

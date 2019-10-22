@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import ColorPicker from "./ColorPicker";
+import React, { Component } from 'react';
+import ColorPicker from './ColorPicker';
 
 class ToolboxOptions extends Component {
   state = {};
@@ -9,28 +9,28 @@ class ToolboxOptions extends Component {
     }
     const disabled = this.props.slides.length >= 2 ? false : true;
     const styles = {
-      left: { property: "textAlign", value: "left" },
-      center: { property: "textAlign", value: "center" },
-      right: { property: "textAlign", value: "right" },
-      h1: { property: "format", value: "h1" },
-      h2: { property: "format", value: "h2" },
-      p: { property: "format", value: "p" },
-      slideInDown: { property: "transition", value: "animated slideInDown" },
-      rollIn: { property: "transition", value: "animated rollIn" },
-      flipInX: { property: "transition", value: "animated flipInX" }
+      left: { property: 'textAlign', value: 'left' },
+      center: { property: 'textAlign', value: 'center' },
+      right: { property: 'textAlign', value: 'right' },
+      h1: { property: 'format', value: 'h1' },
+      h2: { property: 'format', value: 'h2' },
+      p: { property: 'format', value: 'p' },
+      slideInDown: { property: 'transition', value: 'animated slideInDown' },
+      rollIn: { property: 'transition', value: 'animated rollIn' },
+      flipInX: { property: 'transition', value: 'animated flipInX' }
     };
     let height = 200;
     let width = 200;
     if (this.props.block !== null) {
-      height = "height" in this.props.block ? this.props.block.height : 200;
-      width = "width" in this.props.block ? this.props.block.width : 200;
+      height = 'height' in this.props.block ? this.props.block.height : 200;
+      width = 'width' in this.props.block ? this.props.block.width : 200;
     }
     return this.props.block !== null ? (
-      this.props.block.type === "text" ? (
+      this.props.block.type === 'text' ? (
         <div>
           <div className="toolbox-options">
             <div>
-              <p style={{ fontWeight: "bold" }}>Toolbox:</p>
+              <p style={{ fontWeight: 'bold' }}>Toolbox:</p>
               <div className="d-flex">
                 <label>Text Color : </label>
                 <ColorPicker
@@ -116,9 +116,9 @@ class ToolboxOptions extends Component {
         <div>
           <p> This is meant for images</p>
           <label>
-            Width:{" "}
+            Width:{' '}
             <input
-              name={"imageWidth"}
+              name={'imageWidth'}
               onChange={this.props.onImageSizeChange}
               maxLength={3}
               size={3}
@@ -129,9 +129,9 @@ class ToolboxOptions extends Component {
             ></input>
           </label>
           <label>
-            Height:{" "}
+            Height:{' '}
             <input
-              name={"imageHeight"}
+              name={'imageHeight'}
               onChange={this.props.onImageSizeChange}
               maxLength={3}
               size={3}

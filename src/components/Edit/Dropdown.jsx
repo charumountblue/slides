@@ -33,7 +33,8 @@ class Dropdown extends Component {
               className="custom-file-input secondary-style"
               id="inputGroupFile01"
               aria-describedby="inputGroupFileAddon01"
-              textAlign={'left'}
+              style={{ textAlign: 'left' }}
+              accept="image/*"
               onChange={this.props.onImageChange}
             />
             <label className="custom-file-label secondary-style">

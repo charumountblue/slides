@@ -71,6 +71,7 @@ export class Login extends Component {
       this.props.history.replace('/' + this.props.user.uid + '/dashboard');
     } catch (err) {
       alert(err.message);
+      this.setState({ Loader: false });
     }
   };
   onEmailInput = (e) => {

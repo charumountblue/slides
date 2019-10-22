@@ -70,6 +70,7 @@ export class creatorDashboard extends Component {
         return (
           <Deck
             key={deck}
+            deck={deck}
             title={deck.title}
             description={deck.description}
             previewSlide={preview}
@@ -137,9 +138,9 @@ export class creatorDashboard extends Component {
     this.setState({ Loader: !this.state.Loader });
     this.props.deleteDeck(idDeck, this.props.decks);
   };
-  viewDeck = (idDeck) => {
-    // Do stuff
-  };
+  // viewDeck = (idDeck) => {
+  //   // Do stuff
+  // };
   signOut = () => {
     //   signout user
     this.props.history.replace('/');

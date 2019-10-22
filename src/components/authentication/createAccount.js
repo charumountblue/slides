@@ -75,13 +75,26 @@ export class CreateAccount extends Component {
     this.setState({ password: e.target.value });
   };
   signUpClicked = async (e) => {
-    this.setState({ Loader: !this.state.Loader });
-    await this.props.createUser(
-      this.state.name,
-      this.state.email,
-      this.state.password
-    );
-    // this.props.history.replace('/dashboard');
+    let name = this.state.name;
+    if (!name.replace(/\s/g, '').length) {
+      alert('Provide a name');
+    } else if (name.split('')[0] === ' ') {
+      alert("Name can't start with a space");
+    } else if (
+      name.charCodeAt(0) < 65 ||
+      (name.charCodeAt(0) > 90 && name.charCodeAt(0) < 97) ||
+      name.charCodeAt(0) > 122
+    ) {
+      alert('Provide a name');
+    } else {
+      this.setState({ Loader: !this.state.Loader });
+      await this.props.createUser(
+        this.state.name,
+        this.state.email,
+        this.state.password
+      );
+      // this.props.history.replace('/dashboard');
+    }
   };
 }
 

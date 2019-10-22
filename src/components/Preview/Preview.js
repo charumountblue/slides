@@ -1,8 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 // import Decks from "../../decksList.json";
-import { Link } from "react-router-dom";
-import "./Preview.css";
-import SlideShow from "./SlideShow";
+// eslint-disable-next-line
+import { Link } from 'react-router-dom';
+import './Preview.css';
+import SlideShow from './SlideShow';
 
 class Preview extends Component {
   render() {

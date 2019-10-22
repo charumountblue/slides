@@ -1,0 +1,43 @@
+.presentation-page {
+  text-align: center;
+  background-color: black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.presentation {
+  width: 700px;
+  height: 500px;
+  display: inline-block;
+  /* padding-top: 56.25%; */
+  /* padding-top: 100%; */
+  background-color: yellow;
+}
+
+.header {
+  background-color: rgb(163, 218, 255);
+}
+
+.content {
+  color: white;
+}
+.presentation h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  font-size: 60px;
+}
+
+.deck-details {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.deck-details h1 {
+  color: white;
+}
+
+/* 700px 90vh */

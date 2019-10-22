@@ -1,0 +1,22 @@
+.landing-page-test-logo {
+  width: 100%;
+}
+
+body, .app-container, #slidesClone {
+  height: 100vh;
+  width: 100vw;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  margin: .5em
+}

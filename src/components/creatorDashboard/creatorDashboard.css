@@ -1,0 +1,62 @@
+.dashboard-body {
+    background-color: #eeeeee;
+    height: max-content;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-holder {
+    position: relative;
+    margin-top: 3em;
+    align-self: center;
+    width: 80%;
+    min-height: 80%;
+    background-color: #fff;
+}
+
+.loader-holder {
+    position: relative;
+    left: 35%
+}
+
+.profile-name {
+    display: flex;
+    border-bottom: 2px solid
+}
+
+.name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00907b;
+    border: 2px solid white;
+    font-size: 5rem;
+    color: #fff;
+    width: 15vw;
+    height: 15vw;
+    margin: .5em
+}
+
+.deck-details-container {
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 2px solid #ccc;
+    padding: 4px
+}

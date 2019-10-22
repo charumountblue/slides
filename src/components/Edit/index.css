@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.edit-container {
+  box-sizing: border-box;
+  align-items: stretch;
+  height: 100vh;
+  width: 100vw;
+  background-color: silver;
+}
+
+.editor-headings {
+  color: white;
+  font-weight: bold;
+}
+
+.slides-div {
+  /* height: 90%; */
+  background-color: #484848;
+  border: 1px solid black;
+  border-top: none;
+  border-bottom: none;
+}
+
+.workspace {
+  height: 100%;
+  width: 100%;
+  background-color: #f8f9fa;
+}
+
+.toolbox {
+  height: 99.7%;
+  background-color: #484848;
+  padding: 2px;
+}
+
+/* divs inside toolbox */
+
+.my-1 {
+  background-color: #f6f6f6 !important;
+  height: fit-content;
+  padding-left: 5px;
+  padding-bottom: 1em;
+}
+
+/* Single Slide */
+
+.slide-scroll > .slide {
+  box-sizing: border-box;
+  position: relative;
+  background-color: white;
+  border: 1px solid black;
+  margin: 1rem;
+  height: 100px;
+  width: 160px;
+}
+
+.slide-scroll > .slide > p {
+  width: fit-content;
+  font-size: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.slide-scroll > .slide:hover {
+  border: 3px dashed orange;
+}
+
+.add-button {
+  position: sticky;
+  float: bottom;
+}
+
+.slide-scroll {
+  height: 92vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding-left: 0.75em;
+}
+
+.canvas-area {
+  height: 90%;
+  width: 90%;
+  background-color: white;
+}
+
+.drag-delete {
+  height: 6rem;
+  width: 700px;
+  margin-right: 1.5rem;
+  margin-left: 12px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  line-height: normal;
+  float: left;
+}
+
+.editor-loader {
+  position: relative;
+  top: 15%;
+  left: 33%;
+}
+
+.editor-loader > .loader {
+  background-color: white;
+}
+
+.element-property-heading {
+  margin-bottom: 0;
+}
+
+.secondary-style {
+  background-color: #6c757d;
+}

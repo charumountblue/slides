@@ -1,0 +1,33 @@
+.main-body-content{
+    position: relative;
+    padding: 15vh;
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    bottom:530px;
+}
+
+.left-content{
+    padding-top:6vh;
+}
+
+.left-content h1, p{
+    color:white;
+}
+
+.left-content button{
+    margin-left:5vw;
+    width: 150px;
+    height:50px;
+}
+
+.right-content img{
+    width: 422px;
+    height: 262px;
+}
+
+.right-content h3 {
+    color:#e4637c;
+    position: relative;
+    bottom: 22vh;
+    left:75px;
+}

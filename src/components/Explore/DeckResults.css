@@ -1,0 +1,54 @@
+.search-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 4em;
+    row-gap: 2em;
+    padding: 4em;
+}
+
+.deck-explore {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.deck-explore div {
+    height: 250px;
+    width: 350px;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 10px;
+}
+
+.deck-explore p {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.deck-explore:hover {
+    border: rgb(112, 200, 241) solid 3px;
+}
+
+.deck-explore>.slide {
+    box-sizing: border-box;
+    position: relative;
+    background-color: white;
+    border: 1px solid black;
+    margin: 1rem;
+    height: 250px;
+    width: 350px;
+}
+
+.deck-explore>.slide->p {
+    width: fit-content;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.link-show{
+    background-color: rgb(176, 230, 255);
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
